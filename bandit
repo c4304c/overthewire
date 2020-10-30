@@ -1,5 +1,6 @@
 These are the commands that I did and answers for the bandit levels of overthewire.org.
 
+
 Overthewire.org BANDIT
 
 Password for 0 = bandit0
@@ -11,6 +12,8 @@ The goal of this level is for you to log into the game using SSH. The host to wh
 Commands you may need to solve this level
 ssh
 -----------------------------------------------------------------------------
+chris@chris-VirtualBox:~$ ssh bandit0@bandit.labs.overthewire.org -p 2220
+
 bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme 
@@ -18,6 +21,10 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 Password for 1 = boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in a file called - located in the home directory
 
 Commands you may need to solve this level
@@ -30,6 +37,10 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 Password for 2 = CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in a file called spaces in this filename located in the home directory
 
 Commands you may need to solve this level
@@ -43,6 +54,10 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 Password for 3 = UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in a hidden file in the inhere directory.
 
 Commands you may need to solve this level
@@ -64,6 +79,10 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 Password for 4 = pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 Level Goal
 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
@@ -95,6 +114,10 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 Password for 5 = koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 human-readable
@@ -118,6 +141,10 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 Password for 6 = DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored somewhere on the server and has all of the following properties:
 
 owned by user bandit7
@@ -134,6 +161,10 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 password for 7 = HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in the file data.txt next to the word millionth
 
 Commands you may need to solve this level
@@ -146,6 +177,10 @@ millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 password for 8 = cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
 Commands you may need to solve this level
@@ -158,6 +193,10 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 password for 9 = UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 -----------------------------------------------------------------------------
 bandit9@bandit:~$ ls
@@ -177,6 +216,10 @@ S=A.H&^
 
 password for 10 is truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in the file data.txt, which contains base64 encoded data
 
 Commands you may need to solve this level
@@ -188,6 +231,9 @@ bandit10@bandit:~$ strings data.txt | grep "="
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 password for 11 = IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+############################################################################
+############################################################################
+############################################################################
 ############################################################################
 
 The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
@@ -201,7 +247,230 @@ bandit11@bandit:~$ cat data.txt | tr “A-Za-z” “N-ZA-Mn-za-m”
 
 password for 12 = 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful 
 to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv 
 (read the manpages!)
 
+
+
+bandit12@bandit:~$ ls
+data.txt
+bandit12@bandit:~$ mkdir /tmp/bandit12
+bandit12@bandit:~$ cp data.txt /tmp/bandit12
+bandit12@bandit:~$ cd /tmp/bandit12
+bandit12@bandit:/tmp/bandit12$ ls
+data.txt
+bandit12@bandit:/tmp/bandit12$ cat data.txt | xxd -r > data
+bandit12@bandit:/tmp/bandit12$ ls
+data  data.txt
+bandit12@bandit:/tmp/bandit12$ file data
+data: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$ mv data data.gz
+bandit12@bandit:/tmp/bandit12$ ls
+data.gz  data.txt
+bandit12@bandit:/tmp/bandit12$ gzip -d data.gz
+bandit12@bandit:/tmp/bandit12$ ls
+data  data.txt
+bandit12@bandit:/tmp/bandit12$ rm data.txt
+bandit12@bandit:/tmp/bandit12$ ls
+databandit12@bandit:/tmp/bandit12$ mv data data2
+bandit12@bandit:/tmp/bandit12$ ls
+data2
+bandit12@bandit:/tmp/bandit12$ mv data2 data2.bz
+bandit12@bandit:/tmp/bandit12$ ls
+data2.bz
+bandit12@bandit:/tmp/bandit12$ bzip2 -d data2.bz
+bandit12@bandit:/tmp/bandit12$ ls
+data2
+bandit12@bandit:/tmp/bandit12$ file data2 
+data2: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$ mv data2 data3.gz
+
+bandit12@bandit:/tmp/bandit12$ ls
+data3.gz
+bandit12@bandit:/tmp/bandit12$ gzip -d data3.gz 
+bandit12@bandit:/tmp/bandit12$ ls
+data3
+bandit12@bandit:/tmp/bandit12$ file data3
+data3: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data3 data4.tar
+bandit12@bandit:/tmp/bandit12$ tar -xf data4.tar 
+bandit12@bandit:/tmp/bandit12$ ls
+data4.tar  data5.bin
+bandit12@bandit:/tmp/bandit12$ file data5.bin 
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data5.bin data6.tar
+bandit12@bandit:/tmp/bandit12$ tar -xf data6.tar 
+bandit12@bandit:/tmp/bandit12$ ls
+data4.tar  data6.bin  data6.tar
+bandit12@bandit:/tmp/bandit12$ rm data4.tar data6.tar
+bandit12@bandit:/tmp/bandit12$ ls
+data6.bin
+bandit12@bandit:/tmp/bandit12$ file data6.bin 
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/bandit12$ mv data6.bin data7.bz
+bandit12@bandit:/tmp/bandit12$ bzip2 -d data7.bz
+bandit12@bandit:/tmp/bandit12$ ls
+data7
+bandit12@bandit:/tmp/bandit12$ file data7
+data7: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data7 data8.tar
+bandit12@bandit:/tmp/bandit12$ tar -xf data8.tar 
+bandit12@bandit:/tmp/bandit12$ ls
+data8.bin  data8.tar
+bandit12@bandit:/tmp/bandit12$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$ mv data8.bin data9
+bandit12@bandit:/tmp/bandit12$ rm data8.tar
+bandit12@bandit:/tmp/bandit12$ ls
+data9
+bandit12@bandit:/tmp/bandit12$ file data9 
+data9: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$ mv data9 9.gz
+bandit12@bandit:/tmp/bandit12$ gzip -d 9.gz
+bandit12@bandit:/tmp/bandit12$ ls
+9
+bandit12@bandit:/tmp/bandit12$ file 9
+9: ASCII text
+bandit12@bandit:/tmp/bandit12$ cat 9
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+
+password for 13 = 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+
+The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get 
+a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
+
+
+bandit13@bandit:~$ ls
+sshkey.private
+bandit13@bandit:~$ ssh bandit14@localhost -i sshkey.private
+Could not create directory '/home/bandit13/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+
+###### OVER THE WIRE BANNER DISPLAYED ########    
+
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+bandit14@bandit:~$ 
+
+
+
+
+password for 14 = 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+
+
+password for 15 = BfMYroe26WYalil77FoDi9qh59eK5xNr
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ 
+command also works in this version of that command…
+
+bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
+FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
++puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
+pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
+rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
+PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 9C65307AAF96FA62A8FD76547340E3F234CB068E0AC91DF0D790AD17F7F2FAD8
+    Session-ID-ctx: 
+    Master-Key: D56D26BAE2350A7CC5976FFDB63E358B97FB9164D2ED5B5FDCF7F932375AAAE254CE1E100EEBFFEC85F9760E93D1459F
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
+    0010 - f4 1e ee 51 3e ed f8 e6-6c fd 97 4d c5 9f 42 53   ...Q>...l..M..BS
+    0020 - c0 40 dc a9 33 81 7b c0-e7 43 14 8d e9 03 2a 5d   .@..3.{..C....*]
+    0030 - 2b 49 ea 37 9e 1f bd 1a-a9 0e 03 bd 3f 66 cd f4   +I.7........?f..
+    0040 - de 25 83 13 fd d3 a7 aa-52 91 89 8c 1d fe c0 a9   .%......R.......
+    0050 - a7 31 1b 25 f3 22 a7 b6-38 2a 0a 5e 21 ab d6 c9   .1.%."..8*.^!...
+    0060 - 1f b6 ad 4c 8f b9 3c 08-23 9a f5 67 f0 8e 31 48   ...L..<.#..g..1H
+    0070 - ce c6 10 73 25 69 9c ae-24 2b 8c 93 d2 1a d2 89   ...s%i..$+......
+    0080 - 35 58 84 f3 d2 c9 49 d0-54 31 0e 45 a5 ff de dd   5X....I.T1.E....
+    0090 - 8d ed 4f b6 11 42 48 d6-4f 63 34 9b e5 ae 5e fb   ..O..BH.Oc4...^.
+
+    Start Time: 1604037159
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+password for 16 = cluFn7wTiGryunymYOu4RcffSxQluehd
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+Done for the night
