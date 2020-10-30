@@ -396,74 +396,9 @@ Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof an
 command also works in this version of that command…
 
 bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
-CONNECTED(00000003)
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
----
-Certificate chain
- 0 s:/CN=localhost
-   i:/CN=localhost
----
-Server certificate
------BEGIN CERTIFICATE-----
-MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
-b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
-VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
-FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
-+puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
-pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
-CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
-ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
-DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
-rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
-PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
------END CERTIFICATE-----
-subject=/CN=localhost
-issuer=/CN=localhost
----
-No client certificate CA names sent
-Peer signing digest: SHA512
-Server Temp Key: X25519, 253 bits
----
-SSL handshake has read 1019 bytes and written 269 bytes
-Verification error: self signed certificate
----
-New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
-Server public key is 1024 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-No ALPN negotiated
-SSL-Session:
-    Protocol  : TLSv1.2
-    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
-    Session-ID: 9C65307AAF96FA62A8FD76547340E3F234CB068E0AC91DF0D790AD17F7F2FAD8
-    Session-ID-ctx: 
-    Master-Key: D56D26BAE2350A7CC5976FFDB63E358B97FB9164D2ED5B5FDCF7F932375AAAE254CE1E100EEBFFEC85F9760E93D1459F
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    TLS session ticket lifetime hint: 7200 (seconds)
-    TLS session ticket:
-    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
-    0010 - f4 1e ee 51 3e ed f8 e6-6c fd 97 4d c5 9f 42 53   ...Q>...l..M..BS
-    0020 - c0 40 dc a9 33 81 7b c0-e7 43 14 8d e9 03 2a 5d   .@..3.{..C....*]
-    0030 - 2b 49 ea 37 9e 1f bd 1a-a9 0e 03 bd 3f 66 cd f4   +I.7........?f..
-    0040 - de 25 83 13 fd d3 a7 aa-52 91 89 8c 1d fe c0 a9   .%......R.......
-    0050 - a7 31 1b 25 f3 22 a7 b6-38 2a 0a 5e 21 ab d6 c9   .1.%."..8*.^!...
-    0060 - 1f b6 ad 4c 8f b9 3c 08-23 9a f5 67 f0 8e 31 48   ...L..<.#..g..1H
-    0070 - ce c6 10 73 25 69 9c ae-24 2b 8c 93 d2 1a d2 89   ...s%i..$+......
-    0080 - 35 58 84 f3 d2 c9 49 d0-54 31 0e 45 a5 ff de dd   5X....I.T1.E....
-    0090 - 8d ed 4f b6 11 42 48 d6-4f 63 34 9b e5 ae 5e fb   ..O..BH.Oc4...^.
 
-    Start Time: 1604037159
-    Timeout   : 7200 (sec)
-    Verify return code: 18 (self signed certificate)
-    Extended master secret: yes
----
+################# Cert and SSL info printed ######### ign_eof stops server from closing the connection when it reaches the end of the file
+
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
